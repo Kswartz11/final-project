@@ -3,7 +3,7 @@
 import os
 import numpy as np
 # import pickle #Initialize the flask App
-from flask import Flask, render_template, jsonify, request, redirect
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 # from sklearn import preprocessing
 # from sklearn.model_selection import train_test_split
 # from sklearn.linear_model import LogisticRegression
@@ -35,25 +35,24 @@ app = Flask(__name__)
 
 # create route that renders index.html template
 @app.route("/")
-def home():
+def index():
     return render_template("index.html")
 
-@app.route("/templates/data")
-def data():
-    return render_template("data.html")
-
-@app.route("/templates/data")
-def about():
-    return render_template("about.html")
-
-@app.route("/templates/prediction")
-def prediction():
-    return render_template("prediction.html")
-
-@app.route("/templates/explore")
+@app.route("/explore")
 def explore():
     return render_template("explore.html")
 
+@app.route("/data")
+def data():
+    return render_template("data.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/prediction")
+def prediction():
+    return render_template("prediction.html")
 
 
 # Render prediction
