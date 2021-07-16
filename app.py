@@ -54,6 +54,7 @@ def about():
 @app.route("/prediction")
 def prediction():
     return render_template("prediction.html")
+
 @app.route('/about', methods=['GET', 'POST'])
 def root(): 
     if request.method == 'GET':
