@@ -1,0 +1,16 @@
+body {
+    background-color: whitesmoke;
+}
+
+.jumbotron {
+    background-image: url("../img/header.jpg") center center / cover no-repeat;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
+}
+
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+  }
