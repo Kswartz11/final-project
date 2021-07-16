@@ -3,7 +3,7 @@
 import os
 # import numpy as np
 # import pickle #Initialize the flask App
-# from flask import Flask, render_template, jsonify, request, redirect
+from flask import Flask, render_template, jsonify, request, redirect
 # from sklearn import preprocessing
 # from sklearn.model_selection import train_test_split
 # from sklearn.linear_model import LogisticRegression
