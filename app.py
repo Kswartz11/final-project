@@ -11,7 +11,7 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for
 # from sklearn.metrics import confusion_matrix
 # import statsmodels.api as sm
 # from sklearn import linear_model
-
+import csv
 #################################################
 # Flask Setup
 #################################################
@@ -34,6 +34,7 @@ app = Flask(__name__)
 # Loan = create_classes(db)
 
 # create route that renders index.html template
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -53,6 +54,22 @@ def about():
 @app.route("/prediction")
 def prediction():
     return render_template("prediction.html")
+@app.route('/about', methods=['GET', 'POST'])
+def root(): 
+    if request.method == 'GET':
+        return render_template('about.html')
+    elif request.method == 'POST':
+        results = []
+        
+        user_csv = request.form.get('user_csv').split('\n')
+        reader = csv.DictReader(user_csv)
+        
+        for row in reader:
+            results.append(dict(row))
+
+        fieldnames = [key for key in results[0].keys()]
+
+        return render_template('about.html', results=results, fieldnames=fieldnames, len=len)
 
 
 # Render prediction
