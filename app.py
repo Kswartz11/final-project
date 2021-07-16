@@ -1,7 +1,7 @@
 # import dependencies
 # from models import create_classes
 import os
-# import numpy as np
+import numpy as np
 # import pickle #Initialize the flask App
 from flask import Flask, render_template, jsonify, request, redirect
 # from sklearn import preprocessing
@@ -35,9 +35,25 @@ app = Flask(__name__)
 
 # create route that renders index.html template
 @app.route("/")
-
 def home():
     return render_template("index.html")
+
+@app.route("/data")
+def data():
+    return render_template("data.html")
+
+@app.route("/data")
+def about():
+    return render_template("about.html")
+
+@app.route("/prediction")
+def prediction():
+    return render_template("prediction.html")
+
+@app.route("/explore")
+def explore():
+    return render_template("explore.html")
+
 
 
 # Render prediction
