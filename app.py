@@ -38,19 +38,19 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/data")
+@app.route("/templates/data")
 def data():
     return render_template("data.html")
 
-@app.route("/data")
+@app.route("/templates/data")
 def about():
     return render_template("about.html")
 
-@app.route("/prediction")
+@app.route("/templates/prediction")
 def prediction():
     return render_template("prediction.html")
 
-@app.route("/explore")
+@app.route("/templates/explore")
 def explore():
     return render_template("explore.html")
 
